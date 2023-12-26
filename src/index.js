@@ -1,9 +1,14 @@
+require('dotenv').config();
 const express = require("express");
-const http = require("http");
-
 const app = express();
+const cors = require("cors");
 
-const server = http.createServer(app);
+const authRoute = require("./routes/auth-route");
+
+app.use(express.json()); //parse json
+app.use(cors());
+
+app.use("/authen",authRoute)
 
 const port = process.env.PORT || 8000;
-server.listen(port,()=> console.log(`Server is running in port`,port));
+app.listen(port,()=> console.log(`Server is running in port`,port));
