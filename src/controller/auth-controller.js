@@ -1,9 +1,8 @@
 require("dotenv").config();
 const bcrypt = require("bcrypt");
-const { registerSchema, loginSchema } = require("../validate/authen-validate");
-const UserModel = require("../model/userModel");
 const jwt = require("jsonwebtoken");
-const { equal } = require("joi");
+const UserModel = require("../model/userModel");
+const { registerSchema, loginSchema } = require("../validate/authen-validate");
 
 exports.register = async (req, res, next) => {
   try {
