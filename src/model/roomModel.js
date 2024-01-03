@@ -8,6 +8,6 @@ const roomSchema = new mongoose.Schema({
   roomStatus: { type: Number, required: true },
 });
 
-const roomModel = mongoose.model("Room",roomSchema);
+const roomModel = mongoose.model("Room", roomSchema);
 
 module.exports = roomModel;
